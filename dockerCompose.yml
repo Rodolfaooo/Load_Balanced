@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+
+  loadbalancer:
+    build:
+      context: .
+      dockerfile: Dockerfile.lb
+    ports:
+      - "8080:8080"
+    depends_on:
+      - server1
+      - server2
+      - server3
+
+  server1:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    environment:
+      SERVER_NAME: SERVER1
+      DELAY_MS: 50
+
+  server2:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    environment:
+      SERVER_NAME: SERVER2
+      DELAY_MS: 2000
+
+  server3:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    environment:
+      SERVER_NAME: SERVER3
+      DELAY_MS: 300
