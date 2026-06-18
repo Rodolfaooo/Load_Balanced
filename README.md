@@ -33,18 +33,18 @@ Os servidores possuem tempos de resposta diferentes para simular um ambiente het
 ## Estrutura do Projeto
 
 ```text
-least-latency-lb/
+Load_Balanced/
 │
-├── loadbalancer/
+├── loadBalancer/
 │   └── main.go
 │
 ├── server/
 │   └── main.go
 │
-├── docker-compose.yml
+├── dockerCompose.yml
 │
-├── Dockerfile.lb
-├── Dockerfile.server
+├── DockerFile.lb
+├── DockerFile.server
 │
 └── README.md
 ```
@@ -105,7 +105,7 @@ Objetivos:
 
 ```bash
 git clone <URL_DO_REPOSITORIO>
-cd least-latency-lb
+cd Load_Balanced
 ```
 
 ### Subir o ambiente
